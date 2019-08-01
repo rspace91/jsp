@@ -27,7 +27,6 @@
 		 3. 호출결과(List<UserVo>)를 for loop를 통해 tr태그를 반복 생성--%>
 	<%
 		List<UserVO> userList = dao.getUserList();
-				  
 	%>
 	<table border=1>
 		<tr>
@@ -38,6 +37,7 @@
 <%-- 				<td><%=userList.get(i).getUserName() %></td> --%>
 <!-- 			</tr> -->
 <%-- 		<%} %> --%>
+
 		<%for(UserVO userVo : userList){ %>
 			<tr>
 				<td><%=userVo.getUserName() %></td>
