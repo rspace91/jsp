@@ -29,7 +29,7 @@
 			<tr>
 				<td><%=userVo.getUserName() %></td>
 			</tr>
-		}
+		<%}%>
 <%-- 			<%for(int i=0; i<userList.size(); i++ ){%> --%>
 <!-- 			<tr> -->
 <%-- 				<td><%=userList.get(i).getUserName() %></td> --%>
