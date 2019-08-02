@@ -8,6 +8,7 @@ public int factorial(int fac){
 	return fac * factorial(fac-1);
 	
 }
+
 %>
 <!DOCTYPE html>
 <html>
