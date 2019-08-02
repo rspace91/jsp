@@ -16,8 +16,16 @@
 		userId, password
 		String userId = request.getParameter("userId");//문자열userId
 		String userId = request.getParameter(userId);//변수userId
+		
 		String password = request.getParameter("password");
 	-->
+	<%
+		request.setCharacterEncoding("utf-8");
+	
+	%>
+	
+	request method : <%=request.getMethod() %>
+	
 	
 	<%
 		String userId = request.getParameter("userId");
