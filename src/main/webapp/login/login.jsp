@@ -33,6 +33,7 @@
 				UserVO userVo = (UserVO)httpSession.getAttribute("S_USERVO");
 				String userName="";
 				userName = userVo == null ? "" : userVo.getUserName();
+				//
     	%>
     	사용자 이름 : <%=userName %>
 
