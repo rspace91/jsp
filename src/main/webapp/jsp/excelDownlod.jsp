@@ -12,19 +12,20 @@
 </head>
 <body>
 <%
-   response.setHeader("Content-Disposition", "attahchement; filename=line.xls");
+	response.setHeader("Content-Disposition", "attahchement; filename=line.xls");
    IUserDao userDao = new  UserDao();
    List<UserVO> userList = userDao.getUserList();
-
 %>
 <table>
    <tr>
       <th>이름</th>
       <th>나이</th>
    </tr>
-   <%for(UserVO userVo : userList){  %>
+   <%
+   	for(UserVO userVo : userList){
+   %>
       <tr>
-         <td><%=userVo.getUserName() %></td>
+         <td><%=userVo.getUserNm() %></td>
          <td></td>
       </tr>   
    <%} %>

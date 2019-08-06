@@ -4,9 +4,7 @@
 <%@page import="kr.or.ddit.user.repository.IUserDao"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%!
-	public IUserDao dao = new UserDao();
- %>
+<%!public IUserDao dao = new UserDao();%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -38,9 +36,11 @@
 <!-- 			</tr> -->
 <%-- 		<%} %> --%>
 
-		<%for(UserVO userVo : userList){ %>
+		<%
+			for(UserVO userVo : userList){
+		%>
 			<tr>
-				<td><%=userVo.getUserName() %></td>
+				<td><%=userVo.getUserNm() %></td>
 			</tr>
 		<%} %>
 	</table>
