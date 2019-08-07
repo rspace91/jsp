@@ -49,5 +49,4 @@ public class UserDao implements IUserDao{
 		return userVo;
 	}
 
-	
 }

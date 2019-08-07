@@ -33,6 +33,7 @@ public class LoginController extends HttpServlet {
     */
    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
       //webapp/jsp/login.jsp  --> jsp.login.jsp
+      logger.debug("LoginControlelr doGet");
       
       request.getRequestDispatcher("/login/login.jsp").forward(request, response);
    }

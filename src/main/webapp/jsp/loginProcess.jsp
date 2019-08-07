@@ -11,6 +11,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+
 	<!-- 파라미터를 받는다.
 		 input tag의 name속성이 파라미터 이름
 		 userId, password

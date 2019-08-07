@@ -1,17 +1,16 @@
 package kr.or.ddit.user.model;
 
 public class UserVO {
-	
-	private String userId;		// 사용자 아이디
-	private String pass;		// 사용자 비밀번호
-	private String userNm;	// 사용자 이름
+	private String userNm;  //사용자 이름
+	private String userId;
+	private String pass;
 
-	public UserVO() { }
-	
-	public UserVO(String userName) {
-		this.userNm = userName;
+	public UserVO() {	
 	}
-
+	
+	public UserVO(String userNm) {
+		this.userNm = userNm;
+	}
 
 	public String getUserNm() {
 		return userNm;
@@ -39,7 +38,9 @@ public class UserVO {
 
 	@Override
 	public String toString() {
-		return "UserVO [userId=" + userId + ", pass=" + pass + ", userName=" + userNm + "]";
+		return "UserVO [userNm=" + userNm + ", userId=" + userId + ", pass=" + pass + "]";
 	}
+
+	
 
 }
