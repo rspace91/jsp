@@ -1,5 +1,5 @@
 <%@page import="kr.or.ddit.login.web.LoginController"%>
-<%@page import="kr.or.ddit.user.model.UserVO"%>
+<%@page import="kr.or.ddit.user.model.User"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
@@ -30,10 +30,10 @@
     <div class="container">
     	<%
     		HttpSession httpSession = request.getSession();
-    	    			UserVO userVo = (UserVO)httpSession.getAttribute("S_USERVO");
-    	    			String userName="";
-    	    			userName = userVo == null ? "" : userVo.getUserNm();
-    	    			//
+    	    	    			User userVo = (User)httpSession.getAttribute("S_USERVO");
+    	    	    			String userName="";
+    	    	    			userName = userVo == null ? "" : userVo.getUserNm();
+    	    	    			//
     	%>
     	사용자 이름 : <%=userName %>
 

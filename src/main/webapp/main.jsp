@@ -1,4 +1,4 @@
-<%@page import="kr.or.ddit.user.model.UserVO"%>
+<%@page import="kr.or.ddit.user.model.User"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
@@ -46,9 +46,9 @@
 				<li><a href="#">Profile</a></li>
 				<li><a href="#">Help</a></li>
 				<%
-					UserVO userVo = (UserVO)session.getAttribute("S_USERVO");
-										String userName="";
-										userName = userVo == null ? "" : userVo.getUserNm();
+					User userVo = (User)session.getAttribute("S_USERVO");
+												String userName="";
+												userName = userVo == null ? "" : userVo.getUserNm();
 				%>
 				<li><a href="#"><%=userName %> </a></li>
 			</ul>
