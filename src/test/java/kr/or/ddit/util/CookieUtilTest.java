@@ -4,30 +4,33 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+import kr.or.ddit.util.CookieUtil;
+
 public class CookieUtilTest {
-	/**
-	 * 
-	 * Method : getCookieTest
-	 * 작성자 : PC-12
-	 * 변경이력 :
-	 * Method 설명 :
-	 */
-	@Test
-	public void getCookieTest() {
-		/***Given***/
-		String cookieString = "rememberMe=Y; userId=brown; test=testValue";
-		String cookieString2 = "userId2=sally";
-		/***When***/
-		String cookieValue = CookieUtil.getCookie(cookieString, "userId");
-		String rememberValue = CookieUtil.getCookie(cookieString, "rememberMe");
-		String testValue = CookieUtil.getCookie(cookieString, "test");
-		String cookieIdValue = CookieUtil.getCookie(cookieString2, "sally");
+   
+   /**
+    * 
+    * Method : getCookieTest
+    * 작성자 : PC-12
+    * 변경이력 :
+    * Method 설명 : 쿠키 가져오기
+    */
+   @Test
+   public void getCookieTest() {
+      /***Given***/
+      String cookieString = "userId=brown; rememberMe=Y; test=testValue";
+      
+      /***When***/
+      String userIdCookieValue = CookieUtil.getCookie(cookieString, "userId");
+      String rememberMeCookieValue = CookieUtil.getCookie(cookieString, "rememberMe");
+      String testCookieValue = CookieUtil.getCookie(cookieString, "test");
+      String notExistsCookieValue = CookieUtil.getCookie(cookieString, "notExists");
 
-		/***Then***/
-		assertEquals("brown", cookieValue);
-		assertEquals("Y", rememberValue);
-		assertEquals("testValue", testValue);
-		assertEquals("sally", cookieIdValue);
-	}
+      /***Then***/
+      assertEquals("brown", userIdCookieValue);
+      assertEquals("Y", rememberMeCookieValue);
+      assertEquals("testValue", testCookieValue);
+      assertNull(notExistsCookieValue);
 
+   }
 }
