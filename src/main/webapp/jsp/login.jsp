@@ -22,6 +22,8 @@
 			$('form').attr('method', method);
 		})
 	})
+	
+	
 </script>
 </head>
 <body>
