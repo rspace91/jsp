@@ -82,6 +82,8 @@ public class LoginController extends HttpServlet {
 			logger.debug("password : {}", pass);
 
 		// 사용자가 입력한 계정정보와 db에 있는 값이랑 비교
+			
+		//d
 		User user = userDao.getUser(userId);
 
 		// 사용자가 입력한 파라미터 정보와 db에서 조회해온 값이 동일 할 경우 --> webapp/main.jsp
