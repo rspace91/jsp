@@ -8,6 +8,8 @@ import kr.or.ddit.user.model.User;
 public interface IUserDao {
 	
 	List<User> getUserList();
+	List<User> getUserListOnlyHalf();
+	
 
 	User getUser(String userId);
 	

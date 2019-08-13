@@ -1,4 +1,5 @@
 <%@page import="kr.or.ddit.user.model.User"%>
+<%@page import="kr.or.ddit.lprod.model.Lprod"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>

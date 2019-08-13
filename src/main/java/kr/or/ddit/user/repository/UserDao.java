@@ -10,13 +10,7 @@ import kr.or.ddit.util.MybatisUtil;
 
 public class UserDao implements IUserDao{
 
-	/**
-	 * Method : getUserList
-	 * 작성자 : PC-11
-	 * 변경이력 :
-	 * @return
-	 * Method 설명 :
-	 */
+
 	@Override
 	public List<User> getUserList() {
 		
@@ -32,21 +26,22 @@ public class UserDao implements IUserDao{
 		
 		return userList;
 	}
-	/**
-	 * 
-	 * Method : getUser
-	 * 작성자 : PC-12
-	 * 변경이력 :
-	 * @param userId
-	 * @return
-	 * Method 설명 :
-	 */
+	
 	@Override
 	public User getUser(String userId) {
 		SqlSession sqlSession = MybatisUtil.getSession();
 		User userVo = sqlSession.selectOne("user.getUser", userId);
 		sqlSession.close();
 		return userVo;
+	}
+	
+	@Override
+	public List<User> getUserListOnlyHalf() {
+		SqlSession sqlSession = MybatisUtil.getSession();
+		List<User> userHalfList  = sqlSession.selectList("user.getUserListOnlyHalf");
+		sqlSession.close();
+		
+		return userHalfList;
 	}
 
 }
