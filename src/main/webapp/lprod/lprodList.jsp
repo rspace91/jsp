@@ -18,10 +18,28 @@
 
 <title>Jsp-basic</title>
 <%@ include file="/commonJsp/basicLib.jsp"%>
+<script>
+	$(document).ready(function(){
+		
+		$(".lprodTr").on("click", function(){
+			
+			console.log("lpordTr click");
+			
+			$("#lprod_gu").val($(this).children().first().text());
+			
+			$("#frm").submit();
+			
+		})
+	})
 
+</script>
 <!--header  -->
 <%@include file="/commonJsp/header.jsp"%>
 <body>
+<form id="frm" action="${cp}/prodList}" method="get">
+	<input type="hidden" id="lprod_gu" name ="lprod_gu">
+	
+</form>
 	<div class="container-fluid">
 		<div class="row">
 
@@ -37,16 +55,16 @@
 						<h2 class="sub-header">제품</h2>
 						<div class="table-responsive">
 							<table class="table table-striped">
-								<tr>
-									<th>Lprod_Id</th>
+								<tr class="lprodTr">
 									<th>Lprod_GU</th>
+									<th>Lprod_Id</th>
 									<th>Lprod_NM</th>
 								</tr>
 							
 								<c:forEach items="${lprodList}"  var="lprod">
-										<tr>
-												<td>${lprod.LPROD_ID} </td>
+										<tr class="lprodTr">
 												<td>${lprod.LPROD_GU}</td>
+												<td>${lprod.LPROD_ID} </td>
 												<td>${lprod.LPROD_NM} </td>
 										</tr>
 								</c:forEach>
