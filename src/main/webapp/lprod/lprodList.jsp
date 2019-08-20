@@ -24,10 +24,18 @@
 		$(".lprodTr").on("click", function(){
 			
 			console.log("lpordTr click");
+			var dataValue = $(this).data("lprod_gu");
 			
-			$("#lprod_gu").val($(this).children().first().text());
+			$("#lprod_gu").val(dataValue);
 			
 			$("#frm").submit();
+			
+			
+			
+			
+			
+// 			$("#lprod_gu").val($(this).children().first().text());
+						
 			
 		})
 	})
@@ -62,7 +70,8 @@
 								</tr>
 							
 								<c:forEach items="${lprodList}"  var="lprod">
-										<tr class="lprodTr">
+										<tr class="lprodTr" data-lprod_gu="${lprod.LPROD_GU}">
+												<input type="hidden" value="${lprod.LPROD_GU}"/>
 												<td>${lprod.LPROD_GU}</td>
 												<td>${lprod.LPROD_ID} </td>
 												<td>${lprod.LPROD_NM} </td>
