@@ -1,54 +1,53 @@
 package kr.or.ddit.prod.model;
 
 public class Prod {
-	private String LPROD_NM   ;
-	private String LPROD_GU   ;
-	private String BUYER_NAME ;
-	private String PROD_ID    ;
-	private String PROD_NAME  ;
-	private String PROD_PRICE ;
-	
-	public Prod() {
-		
-	}
-	
-	public String getLPROD_NM() {
-		return LPROD_NM;
-	}
-	public void setLPROD_NM(String lPROD_NM) {
-		LPROD_NM = lPROD_NM;
-	}
-	public String getLPROD_GU() {
-		return LPROD_GU;
-	}
-	public void setLPROD_GU(String lPROD_GU) {
-		LPROD_GU = lPROD_GU;
-	}
-	public String getBUYER_NAME() {
-		return BUYER_NAME;
-	}
-	public void setBUYER_NAME(String bUYER_NAME) {
-		BUYER_NAME = bUYER_NAME;
-	}
-	public String getPROD_ID() {
-		return PROD_ID;
-	}
-	public void setPROD_ID(String pROD_ID) {
-		PROD_ID = pROD_ID;
-	}
-	public String getPROD_NAME() {
-		return PROD_NAME;
-	}
-	public void setPROD_NAME(String pROD_NAME) {
-		PROD_NAME = pROD_NAME;
-	}
-	public String getPROD_PRICE() {
-		return PROD_PRICE;
-	}
-	public void setPROD_PRICE(String pROD_PRICE) {
-		PROD_PRICE = pROD_PRICE;
-	}
-	
-	
-	
+
+
+   private String lprod_nm;
+   private String prod_lgu;
+   private String buyer_name;
+   private String prod_id;
+   private String prod_name;
+   private int prod_price;
+
+
+
+   public String getLprod_gu() {
+      return lprod_nm;
+   }
+   public void setLprod_gu(String lprod_gu) {
+      this.lprod_nm = lprod_gu;
+   }
+   public String getProd_lgu() {
+      return prod_lgu;
+   }
+   public void setProd_lgu(String prod_lgu) {
+      this.prod_lgu = prod_lgu;
+   }
+   public String getBuyer_name() {
+      return buyer_name;
+   }
+   public void setBuyer_name(String buyer_name) {
+      this.buyer_name = buyer_name;
+   }
+
+   public String getProd_id() {
+      return prod_id;
+   }
+   public void setProd_id(String prod_id) {
+      this.prod_id = prod_id;
+   }
+   public String getProd_name() {
+      return prod_name;
+   }
+   public void setProd_name(String prod_name) {
+      this.prod_name = prod_name;
+   }
+   public int getProd_price() {
+      return prod_price;
+   }
+   public void setProd_price(int prod_price) {
+      this.prod_price = prod_price;
+   }
+
 }

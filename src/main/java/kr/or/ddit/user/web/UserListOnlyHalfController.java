@@ -10,7 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import kr.or.ddit.user.model.User;
-import kr.or.ddit.user.repository.UserDao;
+import kr.or.ddit.user.service.IUserService;
+import kr.or.ddit.user.service.UserService;
 
 /**
  * Servlet implementation class UserListOnlyHalfController
@@ -28,8 +29,8 @@ public class UserListOnlyHalfController extends HttpServlet {
 		 *  userList.jsp를 통해서 화면응답을 생서하도록 위임
 		 */
 		
-		UserDao userDao = new UserDao();
-		List<User> userList = userDao.getUserListOnlyHalf();
+		UserService userService = new UserService(); 
+		List<User> userList = userService.getUserListOnlyHalf();
 		
 		request.setAttribute("userList", userList);
 		

@@ -14,7 +14,7 @@
   from prod a , lprod b, buyer c
   where  b.LPROD_GU = a.PROD_LGU
   and a.prod_buyer = c.buyer_id
-  and b.lprod_gu = 'P101';
+  and b.lprod_gu = #{prodId}
 	
 	</select>
 </mapper>

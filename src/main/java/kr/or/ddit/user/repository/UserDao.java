@@ -12,36 +12,25 @@ public class UserDao implements IUserDao{
 
 
 	@Override
-	public List<User> getUserList() {
+	public List<User> getUserList(SqlSession sqlSession) {
 		
 		// db에서 조회가 되었다고 가정하고 가짜 객체를 리턴
 //		List<UserVO> userList = new ArrayList<UserVO>();
 //		userList.add(new UserVO("brown"));
 //		userList.add(new UserVO("cony"));
 //		userList.add(new UserVO("sally"));
-		SqlSession sqlSession = MybatisUtil.getSession();
-		List<User> userList  = sqlSession.selectList("user.getUserList");
-		sqlSession.close();
-		
-		
-		return userList;
+		return sqlSession.selectList("user.getUserList");
 	}
 	
 	@Override
-	public User getUser(String userId) {
-		SqlSession sqlSession = MybatisUtil.getSession();
-		User userVo = sqlSession.selectOne("user.getUser", userId);
-		sqlSession.close();
-		return userVo;
+	public User getUser(SqlSession sqlSession,String userId) {
+		return sqlSession.selectOne("user.getUser", userId);
 	}
 	
 	@Override
-	public List<User> getUserListOnlyHalf() {
-		SqlSession sqlSession = MybatisUtil.getSession();
-		List<User> userHalfList  = sqlSession.selectList("user.getUserListOnlyHalf");
-		sqlSession.close();
+	public List<User> getUserListOnlyHalf(SqlSession sqlSession) {
 		
-		return userHalfList;
+		return sqlSession.selectList("user.getUserListOnlyHalf");
 	}
 
 }

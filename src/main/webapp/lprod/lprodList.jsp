@@ -36,7 +36,7 @@
 <!--header  -->
 <%@include file="/commonJsp/header.jsp"%>
 <body>
-<form id="frm" action="${cp}/prodList}" method="get">
+<form id="frm" action="${cp}/prodList" method="get">
 	<input type="hidden" id="lprod_gu" name ="lprod_gu">
 	
 </form>

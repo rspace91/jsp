@@ -12,7 +12,7 @@ public class ProdDao implements IProdDao{
 	@Override
 	public List<Prod> getProd(String prodId) {
 		SqlSession sqlSession = MybatisUtil.getSession();
-		List<Prod> list = sqlSession.selectOne("prod.getProd",prodId);
+		List<Prod> list = sqlSession.selectList("prod.getProd",prodId);
 		sqlSession.close();
 		return list;
 	}
