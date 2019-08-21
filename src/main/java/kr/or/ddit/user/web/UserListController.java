@@ -17,6 +17,12 @@ import kr.or.ddit.user.service.UserService;
 @WebServlet("/userList")
 public class UserListController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	IUserService userService;
+	
+	@Override
+	public void init() throws ServletException {
+		userService = new UserService();
+	}
        
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -26,10 +32,7 @@ public class UserListController extends HttpServlet {
 		 *  request 객체에 사용자 리스트 정보를 저장
 		 *  userList.jsp를 통해서 화면응답을 생서하도록 위임
 		 */
-		UserService userService = new UserService(); 
 		List<User> userList = userService.getUserList();
-		
-	
 		
 		
 		request.setAttribute("userList", userList);

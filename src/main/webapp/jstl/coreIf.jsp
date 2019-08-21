@@ -23,6 +23,6 @@
 	<c:if test="${code == '02'}">
 		code is 02
 	</c:if>
-
+	
 </body>
 </html>

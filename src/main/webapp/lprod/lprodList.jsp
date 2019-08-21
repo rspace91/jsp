@@ -71,7 +71,6 @@
 							
 								<c:forEach items="${lprodList}"  var="lprod">
 										<tr class="lprodTr" data-lprod_gu="${lprod.LPROD_GU}">
-												<input type="hidden" value="${lprod.LPROD_GU}"/>
 												<td>${lprod.LPROD_GU}</td>
 												<td>${lprod.LPROD_ID} </td>
 												<td>${lprod.LPROD_NM} </td>
