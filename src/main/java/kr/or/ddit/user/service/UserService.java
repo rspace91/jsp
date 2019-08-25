@@ -66,7 +66,6 @@ public class UserService implements IUserService{
 		sqlSession.close();
 		return userList;
 	}
-	
 	/**
 	 * 
 	 * Method : getUserPagingList
@@ -91,7 +90,56 @@ public class UserService implements IUserService{
 		sqlSession.close();
 		return map;
 	}
-	
+	/**
+	 * Method : getUserTotalCnt
+	 * 작성자 : PC-12
+	 * 변경이력 :
+	 * @param sqlSession
+	 * @return
+	 * Method 설명 : 전체 사용자 건수 조회
+	 */
+	@Override
+	public int getUserTotalCnt() {
+		SqlSession sqlSession = MybatisUtil.getSession();
+		int res = userDao.getUserTotalCnt(sqlSession);
+		sqlSession.close();
+		
+		return res;
+	}
+	/**
+	 * Method : insertUser
+	 * 작성자 : PC-12
+	 * 변경이력 :
+	 * @param sqlSession
+	 * @param user
+	 * @return
+	 * Method 설명 : 사용자 등록
+	 */
+	@Override
+	public int insertUser(User user) {
+		SqlSession sqlSession = MybatisUtil.getSession();
+		int res = userDao.insertUser(sqlSession, user);
+		sqlSession.commit();
+		sqlSession.close();
+		return res;
+	}
+	/**
+	 * Method : deleteUser
+	 * 작성자 : PC-12
+	 * 변경이력 :
+	 * @param sqlSession
+	 * @param userId
+	 * @return
+	 * Method 설명 : 사용자 삭제
+	 */
+	@Override
+	public int deleteUser( String userId) {
+		SqlSession sqlSession = MybatisUtil.getSession();
+		int res = userDao.deleteUser(sqlSession, userId);
+		sqlSession.commit();
+		sqlSession.close();
+		return res;
+	}
 	
 
 }
