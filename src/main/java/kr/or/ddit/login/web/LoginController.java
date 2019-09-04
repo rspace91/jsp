@@ -59,7 +59,7 @@ public class LoginController extends HttpServlet {
 
 	/**
 	 * 
-	 * Method : doPost 작성자 : PC-11 변경이력 :
+	 * Method : doPost 작성자 : PC-12 변경이력 :
 	 * 
 	 * @param request
 	 * @param response
