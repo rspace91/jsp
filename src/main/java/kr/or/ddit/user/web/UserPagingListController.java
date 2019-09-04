@@ -1,6 +1,7 @@
 package kr.or.ddit.user.web;
 
 import java.io.IOException;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -44,7 +45,6 @@ public class UserPagingListController extends HttpServlet {
 		int paginationSize = (Integer)resultMap.get("paginationSize");
 		request.setAttribute("userList", userList);
 		request.setAttribute("paginationSize", paginationSize);
-		
 		//조회된 사용자 리스트 정보를 html로 만들어줄 jsp로 요청 위임
 		//webapp/user/userPagingList.jsp (userList.jsp 복사)
 		request.getRequestDispatcher("/user/userPagingList.jsp").forward(request, response);
