@@ -1,4 +1,4 @@
-package kr.or.ddit.filter;
+package kr.or.ddit.filter.model;
 
 public class RequestVO {
 	private String uri;

@@ -16,6 +16,8 @@ import javax.servlet.http.HttpServletRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import kr.or.ddit.filter.model.RequestVO;
+
 /*
  * filter를 만드는방법
  * 0. 서블릿 작성, 등록방법과 매우 유사
