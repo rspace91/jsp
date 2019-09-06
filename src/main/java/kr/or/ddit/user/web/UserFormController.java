@@ -74,11 +74,12 @@ public class UserFormController extends HttpServlet {
 			doGet(request, response);
 		}else {
 			
-			logger.debug("user parameter : {},{},{},{},{},{},{},{}", userId, userNm, alias, reg_dt, addr1, addr2, zipcode,
+			logger.debug("user param eter : {},{},{},{},{},{},{},{}", userId, userNm, alias, reg_dt, addr1, addr2, zipcode,
 					pass);
 			
 			// 사용자 등록
-			User user = new User(userId, userNm, alias, reg_dt_date, addr1, addr2, zipcode, pass);
+			User user = new User(userId, userNm, alias, reg_dt_date, addr1, addr2, zipcode, pass, "", "");
+			
 			
 			int insertCnt = 0;
 			
