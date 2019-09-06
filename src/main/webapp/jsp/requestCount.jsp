@@ -23,7 +23,7 @@
 			<c:forEach items="${requestMethodCountMap }" var="entry" > 
 			<tr>
 				<td>${ entry.key.uri}</td>
-				<td>${ entry.value.method}</td>
+				<td>${ entry.key.method}</td>
 				<td>${entry.value }</td>
 			</tr>
 		</c:forEach>

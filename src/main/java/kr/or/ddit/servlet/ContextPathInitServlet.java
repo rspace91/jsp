@@ -13,7 +13,7 @@ import org.slf4j.LoggerFactory;
 
 
 
-@WebServlet(urlPatterns = "/contextPathiInit", loadOnStartup = 1)
+//@WebServlet(urlPatterns = "/contextPathiInit", loadOnStartup = 1)
 public class ContextPathInitServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

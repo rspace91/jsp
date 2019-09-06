@@ -17,6 +17,11 @@ public class RequestVO {
 		}
 	}
 	
+	public  RequestVO (String uri, String method) {
+		this.uri=uri;
+		this.method=method;
+	}
+	
 	public String getUri() {
 		return uri;
 	}

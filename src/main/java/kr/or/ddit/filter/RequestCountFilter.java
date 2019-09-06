@@ -69,6 +69,7 @@ public class RequestCountFilter implements Filter{
 		HttpServletRequest httpRequest = (HttpServletRequest) request;
 		String uri = httpRequest.getRequestURI();
 		String method = httpRequest.getMethod();
+		RequestVO requestVo = new RequestVO(uri,method);
 		
 		//현재까지 해당 uri로 요청온 횟수를 구한다
 //		int uriCount = requestCountMap.getOrDefault(uri, 0);
@@ -81,12 +82,8 @@ public class RequestCountFilter implements Filter{
 		
 		//맵 객체에 데이터를 갱신
 		requestCountMap.put(uri, uriCount);
+		requestMethodCountMap.put(requestVo, methodCount++);
 		
-		RequestVO requestVo = new RequestVO();
-		requestVo.setMethod(method);
-		requestVo.setUri(uri);
-		
-		requestMethodCountMap.put(requestVo , methodCount);
 		
 		chain.doFilter(request, response);
 		

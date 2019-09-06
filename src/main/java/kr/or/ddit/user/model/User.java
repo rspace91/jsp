@@ -16,6 +16,10 @@ public class User {
 	private String addr1;   //주소1
 	private String addr2;   //주소2
 	private String zipcode;   //우편번호
+	private String filename;  //실제파일명(사용자업로드 파일명)
+	private String realfilename;//물리파일명
+	private String realfilename2;//물리파일명
+	
 	
 	public User() {
 		
@@ -27,16 +31,19 @@ public class User {
 
 
 	
-	public User(String userId, String userNm, String alias, Date reg_dt_date, String addr1, String addr2,
-			String zipcode, String pass) {
+	public User(String userId, String userNm, String alias, Date reg_dt, String addr1, String addr2,
+			String zipcode, String pass,String filename,String realfilename) {
 		this.userId =userId;
 		this.userNm =userNm;
 		this.alias =alias;
-		this.reg_dt =reg_dt_date;
+		this.reg_dt =reg_dt;
 		this.addr1 =addr1;
 		this.addr2 =addr2;
 		this.zipcode =zipcode;
 		this.pass =pass;
+		this.filename=filename;
+		this.realfilename=realfilename;
+		
 	}
 	
 	public String getAddr1() {
@@ -44,13 +51,9 @@ public class User {
 	}
 
 
-
-
 	public void setAddr1(String addr1) {
 		this.addr1 = addr1;
 	}
-
-
 
 
 	public String getAddr2() {
@@ -58,13 +61,9 @@ public class User {
 	}
 
 
-
-
 	public void setAddr2(String addr2) {
 		this.addr2 = addr2;
 	}
-
-
 
 
 	public String getZipcode() {
@@ -77,8 +76,6 @@ public class User {
 	public void setZipcode(String zipcode) {
 		this.zipcode = zipcode;
 	}
-
-
 
 
 	public String getAlias() {
@@ -126,15 +123,40 @@ public class User {
 	public void setPass(String pass) {
 		this.pass = pass;
 	}
+	
+	public String getRealfilename() {
+		return realfilename;
+	}
+
+	public void setRealfilename(String realfilename) {
+		this.realfilename = realfilename;
+	}
+
+	public String getRealfilename2() {
+		return realfilename2;
+	}
+
+	public void setRealfilename2(String realfilename2) {
+		this.realfilename2 = realfilename2;
+	}
+	
+
+	public String getFilename() {
+		return filename;
+	}
+
+	public void setFilename(String filename) {
+		this.filename = filename;
+	}
 
 	
 
 	@Override
 	public String toString() {
 		return "User [userNm=" + userNm + ", userId=" + userId + ", pass=" + pass + ", alias=" + alias + ", reg_dt="
-				+ reg_dt + ", addr1=" + addr1 + ", addr2=" + addr2 + ", zipcode=" + zipcode + "]";
+				+ reg_dt + ", addr1=" + addr1 + ", addr2=" + addr2 + ", zipcode=" + zipcode + ", filename=" + filename
+				+ ", realfilename=" + realfilename + ", realfilename2=" + realfilename2 + "]";
 	}
-
 
 	public boolean checkLoginValidate(String userId, String pass) {
 		  if(userId.equals(this.userId)&& pass.equals(this.pass))
